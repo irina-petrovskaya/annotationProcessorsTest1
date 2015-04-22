@@ -1,6 +1,7 @@
 package mybeans;
 
 
+import myAnnotations.PrintMe;
 import myAnnotations.Property;
 
 /**
@@ -9,7 +10,9 @@ import myAnnotations.Property;
  * Project: annotationProcessorsTest1
  * *******************************
  */
+@PrintMe
 public class B1 {
+    @PrintMe
     int myAgeProperty;
     String myNameProperty;
     String myFooProperty;
