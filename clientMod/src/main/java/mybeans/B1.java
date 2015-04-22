@@ -11,12 +11,17 @@ import sourceAnnotations.Property;
  */
 public class B1 {
     @Property()
-    public String getString() {
-        return myStringProperty;
+    public String getName() {
+        return myNameProperty;
     }
 
 
 
+    int myAgeProperty;
+    @Property()
+    public int getAge() {
+        return myAgeProperty;
+    }
 
-    String myStringProperty;
+    String myNameProperty;
 }
