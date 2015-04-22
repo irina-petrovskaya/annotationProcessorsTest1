@@ -1,4 +1,4 @@
-package sourceAnnotations;
+package myAnnotations;
 /**
  * *******************************
  * Created by Irina.Petrovskaya on 4/22/2015.

@@ -1,7 +1,7 @@
 package mybeans;
 
 
-import sourceAnnotations.Property;
+import myAnnotations.Property;
 
 /**
  * *******************************

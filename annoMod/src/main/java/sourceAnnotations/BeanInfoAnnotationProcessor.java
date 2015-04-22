@@ -1,5 +1,7 @@
 package sourceAnnotations;
 
+ import myAnnotations.Property;
+
  import java.beans.*;
  import java.io.*;
  import java.util.*;
