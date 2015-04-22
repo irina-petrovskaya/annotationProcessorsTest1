@@ -19,36 +19,10 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                    <compilerArgument>-proc:none</compilerArgument>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.bsc.maven</groupId>
-                <artifactId>maven-processor-plugin</artifactId>
-                <version>2.2.4</version>
-                <executions>
-                    <execution>
-                        <id>process</id>
-                        <goals>
-                            <goal>process</goal>
-                        </goals>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <outputDirectory>
-                                ${project.basedir}/src/main/generated-sources/metamodel
-                            </outputDirectory>
-                            <processors>
-                                <processor>org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor
-                                </processor>
-                            </processors>
-                            <options>
-                                <eclipselink.persistencexml>
-                                    ${project.parent.basedir}/../../configuration/src/main/resources/META-INF/persistence.xml
-                                </eclipselink.persistencexml>
-                            </options>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+
         </plugins>
 
     </build>
