@@ -15,9 +15,7 @@ public class B1 {
         return myStringProperty;
     }
 
-    public void setString(String stringArg) {
-        myStringProperty = stringArg;
-    }
+
 
 
     String myStringProperty;
