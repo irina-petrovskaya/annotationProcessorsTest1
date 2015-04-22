@@ -50,6 +50,7 @@
                              <excludes></excludes>
                             <options>
                                 <myprefix>read</myprefix>
+                                <extraOption>dummy</extraOption>
                             </options>
                         </configuration>
                     </execution>
