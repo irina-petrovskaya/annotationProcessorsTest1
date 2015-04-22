@@ -49,7 +49,7 @@
                                 <processor>sourceAnnotationsProcessors.PrintAnnotationProcessor</processor>
                             </processors>
                              <excludes>
-                                 <exclude></exclude>
+                                 <exclude>**/do_not_process_annotations/*.java</exclude>
                              </excludes>
                             <options>
                                 <myprefix>read</myprefix>
