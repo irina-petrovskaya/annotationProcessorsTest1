@@ -1,4 +1,4 @@
-package sourceAnnotations;
+package sourceAnnotationsProcessors;
 
  import myAnnotations.Property;
 
@@ -11,7 +11,7 @@ package sourceAnnotations;
  import javax.tools.*;
  import javax.tools.Diagnostic.*;
 
- @SupportedAnnotationTypes("sourceAnnotations.Property")
+ @SupportedAnnotationTypes("myAnnotations.Property")
  @SupportedSourceVersion(SourceVersion.RELEASE_7)
  public class BeanInfoAnnotationProcessor extends AbstractProcessor
  {
