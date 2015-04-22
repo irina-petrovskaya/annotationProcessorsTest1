@@ -5,5 +5,12 @@ package sourceAnnotations;
  * Project: annotationProcessorsTest1
  * *******************************
  */
-public interface Property {
+
+import java.lang.annotation.*;
+
+@Documented
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.SOURCE)
+public @interface Property {
+    String editor() default "";
 }
