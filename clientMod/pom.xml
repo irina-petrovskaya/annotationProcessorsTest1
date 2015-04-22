@@ -44,13 +44,16 @@
                         <configuration>
                             <outputDirectory>src/main/generatedSources</outputDirectory>
                             <processors>
-                                <processor>sourceAnnotations.BeanInfoAnnotationProcessor
+                                <processor>sourceAnnotationsProcessors.BeanInfoAnnotationProcessor
                                 </processor>
+                                <processor>sourceAnnotationsProcessors.PrintAnnotationProcessor</processor>
                             </processors>
-                             <excludes></excludes>
+                             <excludes>
+                                 <exclude></exclude>
+                             </excludes>
                             <options>
                                 <myprefix>read</myprefix>
-                                <extraOption>dummy</extraOption>
+                                <extraOption>Printing info for element:</extraOption>
                             </options>
                         </configuration>
                     </execution>
