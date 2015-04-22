@@ -10,18 +10,31 @@ import sourceAnnotations.Property;
  * *******************************
  */
 public class B1 {
+    int myAgeProperty;
+    String myNameProperty;
+    String myFooProperty;
+
     @Property()
     public String getName() {
         return myNameProperty;
     }
 
-
-
-    int myAgeProperty;
     @Property()
     public int getAge() {
         return myAgeProperty;
     }
 
-    String myNameProperty;
+    @Property()
+    public String readFoo() {
+        return myFooProperty;
+    }
+
+    public void setAge(int ageArg) {
+
+        myAgeProperty = ageArg;
+    }
+
+    public void setName(String nameArg) {
+        myNameProperty = nameArg;
+    }
 }
