@@ -47,7 +47,10 @@
                                 <processor>sourceAnnotations.BeanInfoAnnotationProcessor
                                 </processor>
                             </processors>
-
+                             <excludes></excludes>
+                            <options>
+                                <myprefix>read</myprefix>
+                            </options>
                         </configuration>
                     </execution>
                 </executions>

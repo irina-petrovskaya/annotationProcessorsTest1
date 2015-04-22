@@ -9,11 +9,6 @@ package sourceAnnotations;
  import javax.tools.*;
  import javax.tools.Diagnostic.*;
 
- /**
-  * This class is the processor that analyzes Property annotations.
-  * @version 1.11 2012-01-26
-  * @author Cay Horstmann
-  */
  @SupportedAnnotationTypes("sourceAnnotations.Property")
  @SupportedSourceVersion(SourceVersion.RELEASE_7)
  public class BeanInfoAnnotationProcessor extends AbstractProcessor
@@ -28,7 +23,9 @@ package sourceAnnotations;
           for (Element e : roundEnv.getElementsAnnotatedWith(t))
           {
              String mname = e.getSimpleName().toString();
-             String[] prefixes = { "get", "set", "is" };
+              String myprefix = processingEnv.getOptions().get("myprefix");
+              String[] prefixes = { "get", "set", "is", myprefix };
+
              boolean found = false;
              for (int i = 0; !found && i < prefixes.length; i++)
                 if (mname.startsWith(prefixes[i]))
