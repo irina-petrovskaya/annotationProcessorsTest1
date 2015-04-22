@@ -26,5 +26,12 @@
         </plugins>
 
     </build>
+    <dependencies>
+        <dependency>
+            <groupId>mytests.mvn.annotation_procs</groupId>
+            <artifactId>annoMod</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
