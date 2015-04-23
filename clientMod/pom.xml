@@ -50,9 +50,9 @@
                         <configuration>
                             <outputDirectory>src/main/generatedSources</outputDirectory>
                             <processors>
-                                <processor>sourceAnnotationsProcessors.BeanInfoAnnotationProcessor
+                                <processor>sourceAnnotationsProcessors.Anno1AnnotationProcessor
                                 </processor>
-                                <processor>sourceAnnotationsProcessors.PrintAnnotationProcessor</processor>
+                                <processor>sourceAnnotationsProcessors.Anno2AnnotationProcessor</processor>
                             </processors>
                              <excludes>
                                  <exclude>**/do_not_process_annotations/*.java</exclude>
