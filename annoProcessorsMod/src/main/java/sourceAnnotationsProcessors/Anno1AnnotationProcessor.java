@@ -13,7 +13,7 @@ package sourceAnnotationsProcessors;
 
  @SupportedAnnotationTypes("myAnnotations.Property")
  @SupportedSourceVersion(SourceVersion.RELEASE_7)
- public class BeanInfoAnnotationProcessor extends AbstractProcessor
+ public class Anno1AnnotationProcessor extends AbstractProcessor
  {
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv)
