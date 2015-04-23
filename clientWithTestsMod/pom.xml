@@ -37,67 +37,52 @@
                 </configuration>
             </plugin>
 
-            <!-- Run annotation processors on src/main/java sources -->
+
             <plugin>
                 <groupId>org.bsc.maven</groupId>
                 <artifactId>maven-processor-plugin</artifactId>
                 <version>2.2.4</version>
                 <executions>
+                    <!-- Run annotation processors on src/main/java sources -->
                     <execution>
                         <id>process</id>
                         <goals>
                             <goal>process</goal>
                         </goals>
                         <phase>generate-sources</phase>
+                        <configuration>
+                            <outputDirectory>src/main/generatedStuff</outputDirectory>
+                            <addOutputDirectoryToCompilationSources>false</addOutputDirectoryToCompilationSources>
+                            <!--  ignored - IDEA-139559-->
+                            <!-- <compilerArguments>-Amyprefix=write</compilerArguments>-->
+                            <options>
+                                <!-- comment-out to check IDEA-139559 -->
+                                <myprefix>write</myprefix>
+                            </options>
+                            <processors>
+                                <processor>sourceAnnotationsProcessors.Anno1AnnotationProcessor</processor>
+                            </processors>
+                        </configuration>
                     </execution>
-                </executions>
-                <configuration>
-                    <!--<detail>true</detail>
-                    <outputDiagnostics>true</outputDiagnostics>-->
-                    <outputDirectory>src/main/_generatedStuff</outputDirectory>
-                    <addOutputDirectoryToCompilationSources>false</addOutputDirectoryToCompilationSources>
-                    <!--  ignored - IDEA-139559-->
-                    <!-- <compilerArguments>-Amyprefix=write</compilerArguments>-->
-                    <options>
-                       <!-- <extraOption>display:</extraOption>-->
-                        <!-- comment-out to check IDEA-139559 -->
-                        <myprefix>write</myprefix>
-                    </options>
-                    <processors>
-                        <!--<processor>sourceAnnotationsProcessors.Anno2AnnotationProcessor
-                        </processor>-->
-                        <processor>sourceAnnotationsProcessors.Anno1AnnotationProcessor</processor>
-                    </processors>
-                </configuration>
-            </plugin>
-            <!-- Run annotation processors on src/test/java sources -->
-            <plugin>
-                <groupId>org.bsc.maven</groupId>
-                <artifactId>maven-processor-plugin</artifactId>
-                <version>2.2.4</version>
-                <executions>
+                    <!-- Run annotation processors on src/test/java sources -->
                     <execution>
                         <id>process-test</id>
                         <goals>
                             <goal>process-test</goal>
                         </goals>
                         <phase>generate-test-sources</phase>
+                        <configuration>
+                            <outputDirectory>src/test/generatedStuff</outputDirectory>
+                            <addOutputDirectoryToCompilationSources>false</addOutputDirectoryToCompilationSources>
+                            <options>
+                                <extraOption>Printing results for tests : </extraOption>
+                            </options>
+                            <processors>
+                                <processor>sourceAnnotationsProcessors.Anno2AnnotationProcessor</processor>
+                            </processors>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                   <!-- <detail>true</detail>
-                    <outputDiagnostics>true</outputDiagnostics>-->
-                    <outputDirectory>src/test/generatedStuff</outputDirectory>
-                    <addOutputDirectoryToCompilationSources>false</addOutputDirectoryToCompilationSources>
-                    <options>
-                        <extraOption>tests display : </extraOption>
-                       <!-- <myprefix>return</myprefix>-->
-                    </options>
-                    <processors>
-                         <processor>sourceAnnotationsProcessors.Anno2AnnotationProcessor</processor>
-                         <!--<processor>sourceAnnotationsProcessors.Anno1AnnotationProcessor</processor>-->
-                         </processors>
-                     </configuration>
             </plugin>
         </plugins>
 
