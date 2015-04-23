@@ -8,6 +8,10 @@ import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic;
+import javax.tools.FileObject;
+import javax.tools.StandardLocation;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Set;
 
 /**
@@ -28,14 +32,31 @@ public class Anno2AnnotationProcessor extends AbstractProcessor {
                 if(!(_extraOption.equals(null))) {
                     s += _extraOption;
                 }
+                String _msg = s + e.toString();
                 messager.printMessage(Diagnostic.Kind.NOTE,
-                        s + e.toString());
+                        _msg);
+                writeToFile(_msg, e.toString()+".txt");
             }}
+
         return true;
     }
+
+    private void writeToFile(String resultArg, String resultsArg) {
+        try {
+            FileObject sourceFile = processingEnv.getFiler().createResource(StandardLocation.SOURCE_OUTPUT, "results", resultsArg);
+            PrintWriter out = new PrintWriter(sourceFile.openWriter());
+            out.println(resultArg);
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public SourceVersion getSupportedSourceVersion() {
         return SourceVersion.latestSupported();
     }
+
+
 }
 
