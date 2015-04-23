@@ -52,27 +52,26 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <detail>true</detail>
-                    <outputDiagnostics>true</outputDiagnostics>
-                    <outputDirectory>src/main/generatedStuff</outputDirectory>
-                  <!--  ignored - IDEA-139559-->
-                   <!-- <compilerArguments>-Amyprefix=write</compilerArguments>-->
+                    <!--<detail>true</detail>
+                    <outputDiagnostics>true</outputDiagnostics>-->
+                    <outputDirectory>src/main/_generatedStuff</outputDirectory>
+                    <addOutputDirectoryToCompilationSources>false</addOutputDirectoryToCompilationSources>
+                    <!--  ignored - IDEA-139559-->
+                    <!-- <compilerArguments>-Amyprefix=write</compilerArguments>-->
                     <options>
-                        <extraOption>display: </extraOption>
+                       <!-- <extraOption>display:</extraOption>-->
                         <!-- comment-out to check IDEA-139559 -->
                         <myprefix>write</myprefix>
                     </options>
                     <processors>
-                        <processor>sourceAnnotationsProcessors.Anno1AnnotationProcessor
-                        </processor>
-                        <processor>sourceAnnotationsProcessors.Anno2AnnotationProcessor</processor>
+                        <!--<processor>sourceAnnotationsProcessors.Anno2AnnotationProcessor
+                        </processor>-->
+                        <processor>sourceAnnotationsProcessors.Anno1AnnotationProcessor</processor>
                     </processors>
                 </configuration>
-
-
             </plugin>
             <!-- Run annotation processors on src/test/java sources -->
-            <!--<plugin>
+            <plugin>
                 <groupId>org.bsc.maven</groupId>
                 <artifactId>maven-processor-plugin</artifactId>
                 <version>2.2.4</version>
@@ -86,11 +85,20 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <detail>true</detail>
-                    <outputDiagnostics>true</outputDiagnostics>
+                   <!-- <detail>true</detail>
+                    <outputDiagnostics>true</outputDiagnostics>-->
                     <outputDirectory>src/test/generatedStuff</outputDirectory>
-                </configuration>
-            </plugin>-->
+                    <addOutputDirectoryToCompilationSources>false</addOutputDirectoryToCompilationSources>
+                    <options>
+                        <extraOption>tests display : </extraOption>
+                       <!-- <myprefix>return</myprefix>-->
+                    </options>
+                    <processors>
+                         <processor>sourceAnnotationsProcessors.Anno2AnnotationProcessor</processor>
+                         <!--<processor>sourceAnnotationsProcessors.Anno1AnnotationProcessor</processor>-->
+                         </processors>
+                     </configuration>
+            </plugin>
         </plugins>
 
     </build>
