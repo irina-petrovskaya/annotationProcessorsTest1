@@ -60,9 +60,9 @@
                         <extraOption>display: </extraOption>
                     </options>
                     <processors>
-                        <processor>sourceAnnotationsProcessors.BeanInfoAnnotationProcessor
+                        <processor>sourceAnnotationsProcessors.Anno1AnnotationProcessor
                         </processor>
-                        <processor>sourceAnnotationsProcessors.PrintAnnotationProcessor</processor>
+                        <processor>sourceAnnotationsProcessors.Anno2AnnotationProcessor</processor>
                     </processors>
                 </configuration>
 
