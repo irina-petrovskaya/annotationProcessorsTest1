@@ -14,6 +14,7 @@ import myAnnotations.Property;
 public class B1 {
     @PrintMe
     int myAgeProperty;
+    @PrintMe
     String myNameProperty;
     String myFooProperty;
 
