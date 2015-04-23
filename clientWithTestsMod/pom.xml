@@ -55,9 +55,12 @@
                     <detail>true</detail>
                     <outputDiagnostics>true</outputDiagnostics>
                     <outputDirectory>src/main/generatedStuff</outputDirectory>
-                    <compilerArguments>-Amyprefix=write</compilerArguments>
+                  <!--  ignored - IDEA-139559-->
+                   <!-- <compilerArguments>-Amyprefix=write</compilerArguments>-->
                     <options>
                         <extraOption>display: </extraOption>
+                        <!-- comment-out to check IDEA-139559 -->
+                        <myprefix>write</myprefix>
                     </options>
                     <processors>
                         <processor>sourceAnnotationsProcessors.Anno1AnnotationProcessor
