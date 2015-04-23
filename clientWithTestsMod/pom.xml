@@ -55,7 +55,7 @@
                     <detail>true</detail>
                     <outputDiagnostics>true</outputDiagnostics>
                     <outputDirectory>src/main/generatedStuff</outputDirectory>
-                    <compilerArguments>-Amyprefix="write"</compilerArguments>
+                    <compilerArguments>-Amyprefix=write</compilerArguments>
                     <options>
                         <extraOption>display: </extraOption>
                     </options>
