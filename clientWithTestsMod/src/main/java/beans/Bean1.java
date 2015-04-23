@@ -14,7 +14,7 @@ public class Bean1 {
 
     private String prop1;
     private String prop2;
-    @Property @PrintMe
+    @PrintMe
     public String getProp2() {
         return prop2;
     }
@@ -26,5 +26,8 @@ public class Bean1 {
     public String readProp1(){
         return this.prop1;
     }
-
+    @Property
+    public void setProp1(String prop1Arg) {
+        prop1 = prop1Arg;
+    }
 }
