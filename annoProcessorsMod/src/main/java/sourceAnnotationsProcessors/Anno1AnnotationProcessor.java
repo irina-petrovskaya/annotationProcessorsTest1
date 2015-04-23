@@ -15,9 +15,11 @@ package sourceAnnotationsProcessors;
  @SupportedSourceVersion(SourceVersion.RELEASE_7)
  public class Anno1AnnotationProcessor extends AbstractProcessor
  {
-    @Override
+     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv)
     {
+        Messager messager = processingEnv.getMessager();
+        messager.printMessage(Diagnostic.Kind.NOTE,"************* processing @Property annotation **********************");
        for (TypeElement t : annotations)
        {
           Map<String, Property> props = new LinkedHashMap<>();
@@ -49,6 +51,7 @@ package sourceAnnotationsProcessors;
         try
         {
            if (beanClassName != null) writeBeanInfoFile(beanClassName, props);
+
         }
         catch (IOException e)
         {
