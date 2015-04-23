@@ -26,7 +26,9 @@ package sourceAnnotationsProcessors;
           {
              String mname = e.getSimpleName().toString();
               String myprefix = processingEnv.getOptions().get("myprefix");
-              String[] prefixes = { "get", "set", "is", myprefix };
+              String[] prefixes;
+              if(myprefix == null){ prefixes = new String[]{"get", "set", "is"};}
+              else {prefixes = new String[]{"get", "set", "is", myprefix};}
 
              boolean found = false;
              for (int i = 0; !found && i < prefixes.length; i++)

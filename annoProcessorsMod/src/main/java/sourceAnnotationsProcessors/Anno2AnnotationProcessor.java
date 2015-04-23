@@ -24,7 +24,10 @@ public class Anno2AnnotationProcessor extends AbstractProcessor {
         for (TypeElement te : annotations) {
             for (Element e : roundEnv.getElementsAnnotatedWith(te)) {
                 String s = "*****";
-                s+=processingEnv.getOptions().get("extraOption");
+                String _extraOption = processingEnv.getOptions().get("extraOption");
+                if(!(_extraOption.equals(null))) {
+                    s += _extraOption;
+                }
                 messager.printMessage(Diagnostic.Kind.NOTE,
                         s + e.toString());
             }}
