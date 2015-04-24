@@ -11,8 +11,9 @@ import myAnnotations.Property;
  */
 @PrintMe
 public class Bean1 {
-
-    Bean1BeanInfo info;
+   // uncomment to check availability of generated class :
+    // should be not available with  <addOutputDirectoryToCompilationSources>false</addOutputDirectoryToCompilationSources>
+  /*  Bean1BeanInfo info;*/
     private String prop1;
     private String prop2;
     @PrintMe
