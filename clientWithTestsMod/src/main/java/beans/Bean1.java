@@ -12,6 +12,7 @@ import myAnnotations.Property;
 @PrintMe
 public class Bean1 {
 
+    Bean1BeanInfo info;
     private String prop1;
     private String prop2;
     @PrintMe
