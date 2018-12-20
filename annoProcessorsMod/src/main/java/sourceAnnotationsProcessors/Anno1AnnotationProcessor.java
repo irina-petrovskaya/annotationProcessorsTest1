@@ -12,7 +12,7 @@ package sourceAnnotationsProcessors;
  import javax.tools.Diagnostic.*;
 
  @SupportedAnnotationTypes("myAnnotations.Property")
- @SupportedSourceVersion(SourceVersion.RELEASE_7)
+ @SupportedSourceVersion(SourceVersion.RELEASE_8)
  public class Anno1AnnotationProcessor extends AbstractProcessor
  {
      @Override
